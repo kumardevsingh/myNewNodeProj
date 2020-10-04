@@ -1,14 +1,1 @@
-[
-    {
-        "title": "test1",
-        "imageUrl": "http://www.pngmart.com/files/1/Book-PNG-File.png",
-        "description": " my description",
-        "price": "45"
-    },
-    {
-        "title": "Book on table",
-        "imageUrl": "http://www.pngmart.com/files/1/Book-PNG-File.png",
-        "description": " book on the table",
-        "price": "23"
-    }
-]
+[{"id":"12345","title":"test1","imageUrl":"http://www.pngmart.com/files/1/Book-PNG-File.png","description":" my description","price":"45"},{"id":"54321","title":"Book on table","imageUrl":"http://www.pngmart.com/files/1/Book-PNG-File.png","description":" book on the table","price":"23"},{"title":"test1","imageUrl":"http://www.pngmart.com/files/1/Book-PNG-File.png","description":"test new","price":"1.05","id":"0.08377611463918844"}]
