@@ -1,43 +1,25 @@
 const path = require('path');
+
 const express = require('express');
+const bodyParser = require('body-parser');
+
+const errorController = require('./controllers/error');
+const db = require('./util/database');
+
 const app = express();
 
-const port = process.env.PORT || 3000
-
-//const expressHbs = require('express-handlebars');
-
-/* you have to pass { layoutsDir: 'views/layouts/', defaultLayout: 'main-layout', extname: 'hbs' } config in expresshub */
-
-//app.engine('hbs', expressHbs({ layoutsDir: 'views/layouts/', defaultLayout: 'main-layout', extname: 'hbs' }));
-
-/* app.set('view engine', 'hbs'); */
-const boadyParser = require('body-parser');
-
-app.use(boadyParser.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
-
 app.set('views', 'views');
-
 
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-const errorController = require('./controllers/error');
-
-
-
-
-
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-
-
-app.use("/admin", adminRoutes);
+app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
 app.use(errorController.get404);
 
-app.listen(port, () => {
-    console.log("Server is listing on port no:" + port)
-});
+app.listen(3000);
